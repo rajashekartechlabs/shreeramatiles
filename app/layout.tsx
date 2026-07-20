@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins, Inter, Manrope } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import FloatingActions from "@/components/FloatingActions";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -31,7 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable} ${manrope.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+        <FloatingActions />
+      </body>
     </html>
   );
 }
